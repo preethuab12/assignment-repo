@@ -1,18 +1,20 @@
 #include <stdio.h>
 
-// Recursive function to calculate factorial
-int fact(int n) {
-  if (n == 0) {
-    return 1;
-  } else {
-    return n * fact(n - 1);
-  }
-}
+void fact() {
+    int n;
+    printf("Enter a number to find factorial: ");
+    scanf("%d", &n);
 
-int main() {
-  int num = 5;
-  int factorial = fact(num);
-  printf("Factorial of %d = %d\n", num, factorial);
-  return 0;
+    if (n < 0) {
+        printf("Factorial not defined for negative numbers.\n");
+        return;
+    }
+
+    int result = 1;
+    for (int i = 1; i <= n; i++) {
+        result *= i;
+    }
+
+    printf("Factorial of %d is %d\n", n, result);
 }
 
